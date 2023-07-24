@@ -1,0 +1,172 @@
+body{
+  font-family: Jost;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: var(--purple);
+  padding-left: 30px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.container h2{
+  color: var(--white);
+  margin-bottom: 20px;
+  font-family: Jost-SemiBold;
+}
+
+.historique_club{
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+}
+
+.dates{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dates h3{
+  color: var(--yellow);
+  font-family: Jost-SemiBold;
+}
+
+.dates p{
+  color: var(--white);
+}
+
+.infos_club{
+  width: 95%;
+  background-color: var(--yellow);
+  position: relative;
+  float: right;
+  margin-left: 5%;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
+.infos_club h2{
+  margin-top: 20px;
+  font-family: Jost-SemiBold;
+}
+
+.infos_club span{
+  color: var(--purple);
+  font-family: Jost-SemiBold;
+}
+
+.membres_bureau{
+  width: 80%;
+  margin: auto;
+}
+
+.membres_bureau h2 span{
+  font-weight: bold;
+  font-family: Jost;
+}
+
+.membres_bureau h2{
+  font-family: Jost-Light;
+}
+
+.membres_bureau img{
+  width: 1024px;
+  height: 683px;
+  margin-bottom: 20px;
+}
+
+.membres_bureau h6{
+  font-family: Jost-Light;
+}
+
+.salaries{
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.salaries h2{
+  font-family: Jost-SemiBold;
+  margin-bottom: 20px;
+}
+
+.salaries img{
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container_infos{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.infos_salaries{
+  display: flex;
+  flex-direction: column;
+  opacity: 0.8;
+}
+
+.infos_salaries:hover {
+  opacity: 1;
+}
+
+.prenom_salaries{
+  line-height: 0px;
+  display: flex;
+  font-family: Jost-SemiBold;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--yellow);
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.prenom_salaries p{
+  color: var(--purple);
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.prenom_salaries p span{
+  text-transform: uppercase;
+}
+
+.contact{
+  width: 80%;
+  margin: auto;
+}
+
+.contact h2{
+  font-family: Jost-SemiBold;
+}
+
+.contact p img{
+  width: 30px;
+  height: 30px;
+  padding-right: 5px;
+}
+
+.contact p:nth-child(3){
+  font-family: Jost-SemiBold;
+  display: flex;
+  align-items: center;
+}
+
+.contact span{
+  font-family: Jost-SemiBold;
+}
+
+
+#mail_link:hover{
+  color: var(--purple);
+}

@@ -1,0 +1,68 @@
+.container_partenaires{
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+  font-family: Jost-SemiBold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.partenaires_institutionels{
+  width: 50%;
+  margin: 0;
+  text-align: center;
+  background-color: var(--purple);
+}
+
+.partenaires_institutionels a:hover h3{
+  color: var(--yellow);
+  transition: 0.5s;
+  font-family: Jost-SemiBold;
+}
+
+
+.partenaires_locaux{
+  width: 50%;
+  text-align: center;
+  margin: 0;
+  background-color: var(--yellow);
+}
+
+.partenaires_locaux a:hover h3{
+  color: var(--purple);
+  transition: 0.5s;
+  font-family: Jost-SemiBold;
+}
+
+.partenaires{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.partenaire{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.partenaire img{
+  padding-bottom: 10px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+h3{
+  font-family: Jost-Light;
+  font-size: 20px;
+  margin: 0;
+}

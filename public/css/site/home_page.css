@@ -1,0 +1,12 @@
+body{
+  font-family: Jost;
+}
+
+.actualites{
+  box-shadow: 10px -10px 0px rgba(99,124,255,0.5);
+}
+
+.actualites h3{
+  background-color: var(--yellow);
+  margin: 0;
+}

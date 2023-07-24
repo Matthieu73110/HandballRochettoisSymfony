@@ -1,0 +1,45 @@
+<nav class="navbar bg-transparent">
+    <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="w-100" id="btn-burger">&#9776;</span>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+        <div class="icons">
+            <a target="_blank" href="https://www.facebook.com/HandballRochettois/"><img id="facebook" src="{{ asset('images/reseaux-sociaux/facebook.png') }}" alt="Facebook" title="Facebook" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)"></a>
+            <a target="_blank" href="https://instagram.com/hb_rochettois?igshid=YmMyMTA2M2Y="><img id="instagram" src="{{ asset('images/reseaux-sociaux/instagram.png') }}" alt="Instagram" title="Instagram" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)"></a>
+            <a target="_blank" href="mailto:5173025@ffhandball.net"><img id="mail" src="{{ asset('images/reseaux-sociaux/email.png') }}" alt="Mail" title="Mail" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)"></a>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_default') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../view/agenda.view.php">Agenda du week-end</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../controler/club.ctrl.php">Le club</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../controler/equipes.ctrl.php">Equipes et calendriers</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../view/boutique.view.php">Boutique</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../view/photos.view.php">Photos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../controler/presse.ctrl.php">Presse</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../controler/partenaire.ctrl.php">Partenaires</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</nav>

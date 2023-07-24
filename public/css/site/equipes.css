@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Jost";
+  src: url("../font/Jost/static/Jost-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-Light";
+  src: url("../font/Jost/static/Jost-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-SemiBold";
+  src: url("../font/Jost/static/Jost-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-LightItalic";
+  src: url("../font/Jost/static/Jost-LightItalic.ttf") format("truetype");
+}
+
+.container{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.equipes{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.equipes img{
+  width: 480px;
+  height: 320px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.equipes img:hover{
+  width: 600px;
+  height: 400px;
+  z-index: 999;
+  transition: 0.5s;
+}
+
+.equipes:first-child{
+  margin-top: 30px;
+}
+
+.equipes_infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+h3{
+  font-family: Jost-SemiBold;
+  margin-bottom: 16px;
+}
+
+p {
+  font-family: Jost-Ligth;
+}
+
+.entraineurs{
+  font-family: Jost-LightItalic;
+  margin-top: 10px;
+}
+
+.lien_poule{
+  background-color: var(--purple);
+  width: 175px;
+  height: 30px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  text-align: center;
+  color: var(--yellow);
+  border: 0 solid var(--white);
+}
+
+.calendrier_equipes a:first-child{
+  margin-right: 10px;
+}
+
+.lien_poule:hover{
+  background-color: var(--yellow);
+  width: 175px;
+  height: 30px;
+  color: var(--purple);
+  text-align: center;
+  transition: 0.5s;
+  border: 0 solid var(--white);
+}
+
+.calendrier_equipes{
+  display: flex;
+  margin-top: 10px;
+}

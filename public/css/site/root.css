@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Jost";
+  src: url("../font/Jost/static/Jost-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-Light";
+  src: url("../font/Jost/static/Jost-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-LightItalic";
+  src: url("../font/Jost/static/Jost-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost-SemiBold";
+  src: url("../font/Jost/static/Jost-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "HansHand";
+  src: url("../font/hanshand.TTF") format("truetype");
+}
+
+:root{
+  --yellow : #FFE99D;
+  --purple : #637CFF;
+  --black :  #000000;
+  --light-grey : #E5E5E5;
+  --white : #FFFFFF;
+  --dark-gray : #545454;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+  margin-bottom: 0rem !important;
+}
