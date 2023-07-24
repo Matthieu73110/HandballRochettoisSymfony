@@ -13,3 +13,9 @@
 .card-text{
     text-align: justify;
 }
+
+.carousel{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
