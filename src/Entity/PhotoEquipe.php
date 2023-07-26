@@ -28,6 +28,10 @@ class PhotoEquipe
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+    private array $lien_calendrier_format = [];
+
+    private int $nb_liens = 0;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,5 +108,24 @@ class PhotoEquipe
             return $return_lien;
         }
         
+    }
+
+    public function setLienCalendrierFormat(array $lien_calendrier_format): static
+    {
+        $this->lien_calendrier_format = $lien_calendrier_format;
+
+        return $this;
+    }
+
+    public function getNbLiens(): ?int
+    {
+        return $this->nb_liens;
+    }
+
+    public function setNbLiens(int $nb_liens): static
+    {
+        $this->nb_liens = $nb_liens;
+
+        return $this;
     }
 }

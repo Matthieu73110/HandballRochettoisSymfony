@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes - Handball Rochettois{% endblock %}
+
+{% block css %}<link href="{{ asset('css/site/equipes.css') }}" rel="stylesheet">{% endblock %} 
+
+{% block body %}
+<div class="container d-flex">
+    {% for equipe in equipes %}
+        <div class="equipes">
+            <img src="{{ asset(equipe.image) }}" alt="Photo d'équipes des {{equipe.nom}}>">
+            <div class="equipes_infos">
+                <h3>{{equipe.nom}}</h3>
+                <p>{{equipe.description}}</p>
+                <p class="entraineurs">Entraîneurs : {{equipe.entraineurs}}</p>
+                <div class="calendrier_equipes">
+                    {# {% if equipe.nb_liens == 1 %}
+                        <a class="lien_poule" target="_blank" href="{{equipe.lien_calendrier}}">Calendrier</a>
+                    {% elseif equipe.nb_liens > 1 %}
+                        <a class="lien_poule" target="_blank" href="{{equipe.lien_calendrier_format[0]}}">{{equipe.lien_calendrier_format[0]}}</a>
+                        <a class="lien_poule" target="_blank" href="{{equipe.lien_calendrier_format[1]}}">{{equipe.lien_calendrier_format[1]}}</a>
+                    {% endif %} #}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

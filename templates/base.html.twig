@@ -14,6 +14,7 @@
         <link href="{{ asset('css/bootstrap-5/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawsome-5.all.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/site/base.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/site/footer.css') }}" rel="stylesheet">
         <!-- debut du block css -->
         {% block css %}{%  endblock %}
         <!-- fin du block css -->
@@ -43,8 +44,8 @@
                     </div>
                 {# </div> #}
             </div>
-            {% include "footer.html.twig"  %} 
         </main>
+        {% include "footer.html.twig"  %} 
         <!-- JS : JQuery, Bootstrap -->
         <script src="{{ asset('js/jquery-3/jquery.slim.min.js') }}" ></script>
         <script src="{{ asset('js/bootstrap-5/bootstrap.bundle.min.js') }}" ></script>
@@ -87,15 +88,25 @@
                 }
             }
 
-            window.addEventListener("scroll", function() {
-                var footer = document.querySelector("footer");
-                var container = document.querySelector(".container-fluid");
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+           document.addEventListener('scroll', function() {
+                const footer = document.querySelector('footer');
+                const content = document.querySelector('.content');
+                const contentHeight = content.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrollTop = window.scrollY;
 
-                if (scrollTop + window.innerHeight >= container.offsetHeight) {
-                    footer.classList.remove("fixed-footer");
+                if (contentHeight > windowHeight) {
+                    // Le contenu dépasse la hauteur de la fenêtre
+                    if (scrollTop + windowHeight >= contentHeight) {
+                        // L'utilisateur a atteint le bas du contenu
+                        footer.style.bottom = '0';
+                    } else {
+                        // L'utilisateur défile le contenu
+                        footer.style.bottom = '-' + footer.offsetHeight + 'px';
+                    }
                 } else {
-                    footer.classList.add("fixed-footer");
+                    // Le contenu tient dans la fenêtre, le footer est toujours au bas de la page
+                    footer.style.bottom = '0';
                 }
             });
         
