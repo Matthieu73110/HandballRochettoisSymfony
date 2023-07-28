@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home - Handball Rochettois
-{% endblock %}
+{% block title %}Home - Handball Rochettois{% endblock %}
 
 {% block css %}
 	<link rel="stylesheet" href="{{ asset('css/site/accueil.css') }}">
@@ -27,20 +26,20 @@
 		</div>
 	</div>
 	<hr>
-	<div class="cards">
+	<div class="d-flex flex-wrap w-50">
 		{% for post in posts %}
 			<div class="card m-3">
-				{% if post.image != null %}
-					<img src="{{ asset(post.image) }}" class="card-img-top">
-				{% endif %}
 				<div class="card-body">
 					{% if post.titre != null %}
-						<h5 class="card-title fw-bold">{{ post.titre }}</h5>
+							<h5 class="card-title fw-bold">{{ post.titre }}</h5>
 					{% endif %}
 					{% if post.paragraphe != null %}
-						<p class="card-text text-justify">{{ post.paragraphe }}</p>
+							<p class="card-text text-justify">{{ post.paragraphe }}</p>
 					{% endif %}
 				</div>
+				{% if post.image != null %}
+						<img src="{{ asset(post.image) }}" class="card-img-top">
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>

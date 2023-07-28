@@ -1,28 +1,5 @@
-h2{
-  width: 50%;
-  padding: 10px 0px 10px 10%;
-  font-family: Jost-SemiBold;
-  background-color: var(--yellow);
-  margin: 20px 0px;
-}
-
-.body-presse{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.presse{
-  margin-bottom: 30px;
-  width: 75%;
-}
-
-.presse h4{
-  color: var(--purple);
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.presse:nth-last-of-type(2n+1) h4{
-  color: var(--yellow);
+h5{
+  color: var(--purple) !important;
+  font-weight: bold !important;
+  /* background-color: var(--purple) !important; */
 }

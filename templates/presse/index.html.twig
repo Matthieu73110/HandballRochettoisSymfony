@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presse - Handball Rochettois{% endblock %}
+
+{% block css %}<link href="{{ asset('css/site/presse.css') }}" rel="stylesheet">{% endblock %}
+
+{% block body %}
+
+<h2>Presse</h2>
+
+<div class="d-flex flex-wrap"> 
+{% for presse in presses %}
+   <div class="card mb-3 m-3 w-50">
+        <div class="card-body">
+            <h5 class="card-title">{{presse.titre}} - {{presse.date|date('d-m-Y')}}</h5>
+        </div>
+    <img src="{{ asset(presse.image) }}" class="card-img-top">
+    </div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script>changementAcitveLink('Presse')</script>
+{% endblock %}

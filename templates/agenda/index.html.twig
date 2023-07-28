@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agenda - Handball Rochettois{% endblock %}
+
+{% block body %}
+
+<h2>Agenda du week-end</h2>
+
+<iframe id="62820786a6b1205ec3f5c116" src="https://scorenco.com/widget/62820786a6b1205ec3f5c116/?auto_height=true" style="display: block; width: 100%; overflow: auto; margin: auto; border-width: 0px;" scrolling="no"></iframe>
+
+{% endblock %}
+
+{% block js %}
+    <script>changementAcitveLink('Agenda du week-end')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script><script>if(!window._rsz){window._rsz=function(){var i=iFrameResize({checkOrigin:false,interval:100});};if(document.readyState!="loading"){_rsz()}else{document.addEventListener("DOMContentLoaded",_rsz)}}</script>
+{% endblock %}

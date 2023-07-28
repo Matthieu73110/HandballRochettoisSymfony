@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires - Handball Rochettois{% endblock %}
+
+{% block css %}<link href="{{ asset('css/site/partenaires.css') }}" rel="stylesheet">{% endblock %}
+
+{% block body %}
+
+    <div class="container_partenaires">
+        <div class="partenaires_institutionels">
+            <h2>Partenaires institutionnels</h2>
+            <div class="partenaires">
+                {% for partenaire_institutionnel in partenaires_institutionnel %}
+                    <div class="partenaire">
+                        {% set lien_web = partenaire_institutionnel.getLienWeb() %}
+                        {% if lien_web is not null  %}
+                            <a target="_blank" href="{{lien_web}}">
+                        {% else %}
+                            <a target="_blank" href="#">
+                        {% endif %}
+                        {% if  partenaire_institutionnel.image != null %}
+                            <img src="{{ asset(partenaire_institutionnel.image) }}" title="Image {{partenaire_institutionnel.nom}} " alt="Image {{partenaire_institutionnel.nom}}">
+                        {% else %}
+                            <img src="{{ asset('images/partenaires/base.png') }}" title="Image {{partenaire_institutionnel.nom}} " alt="Image {{partenaire_institutionnel.nom}}">
+                        {% endif %}
+                        <h3>{{partenaire_institutionnel.nom}}</h3>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="partenaires_locaux">
+            <h2>Partenaires locaux</h2>
+            <div class="partenaires">
+                {% for partenaire_locaux in partenaires_locaux %}
+                    {% set lien_web = partenaire_locaux.getLienWeb() %}
+                    <div class="partenaire">
+                    <a target="_blank" href="{{lien_web}}">
+                        {% if  partenaire_locaux.image != null %}
+                            <img src="{{ asset(partenaire_locaux.image) }}" title="Image {{partenaire_locaux.nom}} " alt="Image {{partenaire_locaux.nom}}">
+                        {% else %}
+                            <img src="{{ asset('images/partenaires/base.png') }}" title="Image {{partenaire_locaux.nom}} " alt="Image {{partenaire_locaux.nom}}">
+                        {% endif %}
+                        <h3>{{partenaire_locaux.nom}}</h3>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+
+<script>changementAcitveLink('Partenaires')</script>
+
+{% endblock %}

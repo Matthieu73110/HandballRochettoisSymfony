@@ -55,7 +55,7 @@
                 var navLink = document.getElementsByClassName('navbar-nav')
                 for (var i = 0; i < navLink[0].children.length; i++) {
                     if (navLink[0].children[i].children[0].innerHTML   == nomLink) {
-                    navLink[0].children[i].children[0].classList.add("active")
+                        navLink[0].children[i].children[0].classList.add("active")
                     }
                 }
             }
@@ -86,30 +86,7 @@
                         element.src = "{{ asset('images/reseaux-sociaux/email.png') }}" ;
                         break;
                 }
-            }
-
-           document.addEventListener('scroll', function() {
-                const footer = document.querySelector('footer');
-                const content = document.querySelector('.content');
-                const contentHeight = content.offsetHeight;
-                const windowHeight = window.innerHeight;
-                const scrollTop = window.scrollY;
-
-                if (contentHeight > windowHeight) {
-                    // Le contenu dépasse la hauteur de la fenêtre
-                    if (scrollTop + windowHeight >= contentHeight) {
-                        // L'utilisateur a atteint le bas du contenu
-                        footer.style.bottom = '0';
-                    } else {
-                        // L'utilisateur défile le contenu
-                        footer.style.bottom = '-' + footer.offsetHeight + 'px';
-                    }
-                } else {
-                    // Le contenu tient dans la fenêtre, le footer est toujours au bas de la page
-                    footer.style.bottom = '0';
-                }
-            });
-        
+            }        
         </script>
         <!-- debut du block js -->
         {% block js %}{%  endblock %}

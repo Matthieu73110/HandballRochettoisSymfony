@@ -28,9 +28,9 @@ class PhotoEquipe
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    private array $lien_calendrier_format = [];
+    public array $lien_calendrier_format = [];
 
-    private int $nb_liens = 0;
+    public ?int $nb_liens = 0;
 
     public function getId(): ?int
     {
@@ -122,7 +122,7 @@ class PhotoEquipe
         return $this->nb_liens;
     }
 
-    public function setNbLiens(int $nb_liens): static
+    public function setNbLiens(int $nb_liens): self
     {
         $this->nb_liens = $nb_liens;
 

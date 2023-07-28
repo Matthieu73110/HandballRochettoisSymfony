@@ -24,6 +24,17 @@ class EquipesController extends AbstractController
         }
         return $this->render('equipes/index.html.twig', [
             'equipes' => $equipes
+
+        ]);
+    }
+
+    #[Route('/equipes/{idEquipe}', name: 'app_equipes_detail')]
+    public function equipe(ManagerRegistry $doctrine, int $idEquipe = 0): Response
+    {
+        $equipe = $doctrine->getManager()->getRepository('App\Entity\PhotoEquipe')->findBy(['id'=>$idEquipe]);
+        return $this->render('equipes/index.html.twig', [
+            'equipe' => $equipe
+
         ]);
     }
 }
