@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Club - Handball Rochettois
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ asset('css/site/club.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h2>Historique du club</h2>
+		<div class="historique_club">
+			<div id="monCarrousel" class="carousel slide carousel-fade" data-ride="carousel">
+				<div class="carousel-inner">
+					{% set events_count = events_club|length %}
+					{% set items_per_slide = 5 %}
+					{% set num_slides = ((events_count + items_per_slide - 1) / items_per_slide)|number_format(0, '.', '') %}
+
+					{% for i in 0..num_slides-1 %}
+						{% set active_class = (i == 0) ? 'active' : '' %}
+						<div class="carousel-item {{ active_class }}">
+							<div class="dates-wrapper">
+								{% for event in events_club|slice(i * items_per_slide, (i + 1) * items_per_slide) %}
+									<div class="dates">
+										<h3>{{ event.annee }}</h3>
+										<p>{{ event.titre }}</p>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<button class="carousel-control-prev" href="#monCarrousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Précédent</span>
+				</button>
+				<button class="carousel-control-next" href="#monCarrousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Suivant</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="infos_club">
+		<h2>Qui sommes-nous ?</h2>
+		<p>Nous sommes un club avec 300 licenciés répartis en 12 collectifs compétitifs et 8 non-compétitifs.
+			<br>
+			Les équipes de notre club :
+			<br></p>
+		<h4>Équipes féminines</h4>
+		<p>
+			{% for information_feminine in informations_feminines %}
+				<span>{{information_feminine.categorie}}</span>
+				{{information_feminine.niveau}}
+				<br>
+			{% endfor %}
+		</p>
+		<h4>Équipes masculines</h4>
+		<p>
+			{% for information_masculine in informations_masculines %}
+				<span>{{information_masculine.categorie}}</span>
+				{{information_masculine.niveau}}
+				<br>
+			{% endfor %}
+		</p>
+		<h4>Équipes mixtes</h4>
+		<p>
+			{% for information_mixte in informations_mixte %}
+				<span>{{information_mixte.categorie}}</span>
+				{% if information_mixte.niveau 		%}
+					{{information_mixte.niveau}}
+				{% endif %}
+				<br>
+			{% endfor %}
+		</p>
+	</div>
+	<div class="membres_bureau">
+		<h2>
+			<span>Membres du bureau</span>
+			Saison 2022-2023</h2>
+		<img id="images_membres_bureau" usemap="#membres_bureau" src="{{ asset('images/bureau.jpg') }}" alt="Photo des membres du bureau du club">
+		<map name="membres_bureau">
+			{% for membre in membres %}
+				<area shape="poly" coords="{{membre.coordonnees}}" href="#images_membres_bureau" alt="Photo des membres du bureau" title="{{membre.prenom}} {{membre.nom}}{% if membre.fonction %} ({{membre.fonction}}){% endif %}">
+			{% endfor %}
+		</map>
+		<h6>Absents : David Logie, Aurélie Logie, Philippe Chambat</h6>
+	</div>
+
+	<div class="salaries">
+		<h2>Notre salarié et services civiques</h2>
+		<div class="container_infos">
+			{% for salarie in salaries %}
+				<div class="infos_salaries">
+					<img src="{{ asset(salarie.image)}}" alt="Photo portrait de {{salarie.prenom}} {{salarie.nom}}">
+					<div class="prenom_salaries">
+						<p>{{salarie.prenom}}
+							<span>{{salarie.nom}}</span>
+						</p>
+						<p>{{salarie.fonction}}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+	<div class="contact">
+		<h2>Contact</h2>
+		<p>Handball Rochettois
+			<br>
+			Mairie de La Rochette
+			<br>
+			73110 VALGELON-LA ROCHETTE</p>
+		<p><img src="{{asset('images/reseaux-sociaux/email.png')}}" alt="Image d'une enveloppe qui représente un mail">
+			<a id="mail_link" href="mailto:5173025@ffhandball.net">5173025@ffhandball.net</a>
+		</p>
+		<p>
+			<span>Correspondant du club :</span>
+			Micaël GRAMBIN / 06.36.37.78.74
+		</p>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script>
+		// Gérer le clic sur "Suivant"
+$('.carousel-control-next').click(function () {
+var activeItem = $('#monCarrousel .carousel-item.active');
+var nextItem = activeItem.next('.carousel-item');
+
+if (nextItem.length === 0) {
+nextItem = $('#monCarrousel .carousel-item').first();
+}
+
+activeItem.removeClass('active');
+nextItem.addClass('active');
+});
+
+// Gérer le clic sur "Précédent"
+$('.carousel-control-prev').click(function () {
+var activeItem = $('#monCarrousel .carousel-item.active');
+var prevItem = activeItem.prev('.carousel-item');
+
+if (prevItem.length === 0) {
+prevItem = $('#monCarrousel .carousel-item').last();
+}
+
+activeItem.removeClass('active');
+prevItem.addClass('active');
+});
+	</script>
+{% endblock %}

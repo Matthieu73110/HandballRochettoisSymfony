@@ -21,8 +21,6 @@ body{
 }
 
 .historique_club{
-  display: flex;
-  justify-content: space-around;
   width: 95%;
 }
 
@@ -169,4 +167,49 @@ body{
 
 #mail_link:hover{
   color: var(--purple);
+}
+
+/* Mettez le sélecteur CSS approprié pour cibler le carousel-container */
+.carousel-container {
+  position: relative;
+}
+
+/* Mettez le sélecteur CSS approprié pour cibler les flèches du carrousel */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Ajustez la position des flèches selon vos besoins */
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+/* Le reste du CSS pour le carousel reste inchangé */
+.carousel-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+.dates-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+}
+
+.dates {
+  flex: 0 0 calc(20% - 10px);
+  margin-bottom: 10px;
 }

@@ -2,10 +2,14 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Eventclub;
+use App\Entity\Informationequipe;
+use App\Entity\Membrebureau;
 use App\Entity\Partenaires;
 use App\Entity\PhotoEquipe;
 use App\Entity\PostAcceuil;
 use App\Entity\Presse;
+use App\Entity\Salarie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -17,6 +21,11 @@ class AppFixtures extends Fixture
         $equipes = json_decode(self::EQUIPES);
         $partenaires = json_decode(self::PARTENAIRES);
         $presses = json_decode(self::PRESSES);
+        $events_club = json_decode(self::EVENT_CLUB);
+        $members_bureau = json_decode(self::MEMBRES_BUREAU);
+        $informations = json_decode(self::INFORMATIONS);
+        $salaries = json_decode(self::SALARIES);
+
         foreach ($posts_acceuil as $post) {
             $post_acceuil = new PostAcceuil();
             $post_acceuil->setTitre($post->titre);
@@ -25,6 +34,7 @@ class AppFixtures extends Fixture
             $post_acceuil->setDate(new \DateTime($post->date));
             $manager->persist($post_acceuil);
         }
+
         foreach ($equipes as $equipe) {
             $photo_equipe = new PhotoEquipe();
             $photo_equipe->setNom($equipe->nom);
@@ -34,6 +44,7 @@ class AppFixtures extends Fixture
             $photo_equipe->setDescription($equipe->description);
             $manager->persist($photo_equipe);
         }
+
         foreach ($partenaires as $partenaire) {
             $part = new Partenaires();
             $part->setNom($partenaire->nom);
@@ -42,12 +53,46 @@ class AppFixtures extends Fixture
             $part->setType($partenaire->type);
             $manager->persist($part);
         }
+
         foreach ($presses as $presse) {
             $press = new Presse();
             $press->setTitre($presse->titre);
             $press->setImage($presse->image);
             $press->setDate(new \DateTime($presse->date));
             $manager->persist($press);
+        }
+
+        foreach ($events_club as $ev) {
+            $event_club = new Eventclub();
+            $event_club->setTitre($ev->titre);
+            $event_club->setAnnee($ev->annee);
+            $manager->persist($event_club);
+        }
+
+        foreach ($members_bureau as $member) {
+            $membre_bureau = new Membrebureau();
+            $membre_bureau->setCoordonnees($member->coordonnees);
+            $membre_bureau->setNom($member->nom);
+            $membre_bureau->setPrenom($member->prenom);
+            $membre_bureau->setFonction($member->fonction);
+            $manager->persist($membre_bureau);
+        }
+
+        foreach ($informations as $information){
+            $info = new Informationequipe();
+            $info->setCategorie($information->categorie);
+            $info->setNiveau($information->niveau);
+            $info->setType($information->type);
+            $manager->persist($info);
+        }
+
+        foreach ($salaries as $salarie){
+            $sal = new Salarie();
+            $sal->setNom($salarie->nom);
+            $sal->setPrenom($salarie->prenom);
+            $sal->setImage($salarie->image);
+            $sal->setFonction($salarie->fonction);
+            $manager->persist($sal);
         }
 
         $manager->flush();
@@ -643,4 +688,256 @@ class AppFixtures extends Fixture
             
         ]
     JSON;
+
+    const EVENT_CLUB = <<<JSON
+        [
+            {
+                "id" : 1,
+                "titre" : "Création du HBR",
+                "annee" : "1993"
+            },
+            {
+                "id" : 2,
+                "titre" : "Champions de Savoie",
+                "annee" : "1996"
+            },
+            {
+                "id" : 3,
+                "titre" : "Accession Pré-national",
+                "annee" : "1999"
+            },
+            {
+                "id" : 4,
+                "titre" : "Demi-finale de la coupe de France féminine",
+                "annee" : "2011"
+            },
+            {
+                "id" : 5,
+                "titre" : "25 ans du club",
+                "annee" : "2018"
+            },
+            {
+                "id" : 6,
+                "titre" : "Champion de 1er division départementale",
+                "annee" : "2023"
+            },
+            {
+                "id" : 7,
+                "titre" : "Accesion Honneur Régional",
+                "annee" : "2023"
+            },
+            {
+                "id" : 8,
+                "titre" : "30 ans du club",
+                "annee" : "2023"
+            }
+        ]
+    JSON;
+
+    const MEMBRES_BUREAU = <<<JSON
+        [
+            {
+                "id": 1,
+                "coordonnees": "85,184,107,184,97,180,111,193,107,210,111,216,129,222,137,231,125,237,114,246,114,258,114,276,117,294,122,307,125,329,125,355,131,374,134,441,124,458,61,458,70,393,66,325,69,278,60,266,59,249,61,234,76,220,85,206,72,235",
+                "prenom": "Franck",
+                "nom": "Biboud",
+                "fonction": "Vice-Président"
+            },
+            {
+                "id": 2,
+                "coordonnees": "145,207,159,194,169,206,189,237,172,253,168,278,179,309,179,343,188,380,191,427,186,463,135,463,132,371,128,307,115,272,126,240,145,234",
+                "prenom": "Réal",
+                "nom": "Berthollet",
+                "fonction": "Vice-Président"
+            },
+            {
+                "id": 3,
+                "coordonnees": "203,205,221,216,216,253,214,281,212,299,225,318,227,378,219,460,191,466,190,384,185,334,181,294,176,265,188,217",
+                "prenom": "Valérie",
+                "nom": "Usannaz",
+                "fonction": "Secrétaire"
+            },
+            {
+                "id": 4,
+                "coordonnees": "251,184,269,188,272,229,282,234,278,255,267,264,263,284,273,327,268,363,259,352,248,379,242,463,213,477,226,462,227,424,231,380,231,333,222,303,217,249,241,229,241,189",
+                "prenom": "Corentin",
+                "nom": "Brasseur",
+                "fonction": null
+            },
+            {
+                "id": 5,
+                "coordonnees": "294,219,314,225,320,271,319,297,328,335,329,410,318,481,258,483,275,411,272,360,273,322,269,269,287,230",
+                "prenom": "Cassandra",
+                "nom": "Neyret",
+                "fonction": null
+            },
+            {
+                "id": 6,
+                "coordonnees": "372,188,384,196,406,247,386,275,385,310,393,349,405,429,408,490,322,489,338,398,341,317,324,290,333,251,355,234,357,199",
+                "prenom": "Micaël",
+                "nom": "Grambin",
+                "fonction": null
+            },
+            {
+                "id": 7,
+                "coordonnees": "422,223,432,207,447,213,465,258,469,296,476,317,468,369,462,425,453,501,411,501,409,436,399,364,390,299,399,270,410,256,420,255",
+                "prenom": "Aurore",
+                "nom": "Cougnon",
+                "fonction": null
+            },
+            {
+                "id": 8,
+                "coordonnees": "505,177,522,162,534,175,558,226,578,282,556,313,555,482,564,511,476,509,483,382,485,318,467,281,476,232,499,213",
+                "prenom": "Gaël",
+                "nom": "Jouty",
+                "fonction": "Président"
+            },
+            {
+                "id": 9,
+                "coordonnees": "591,200,615,243,636,261,625,325,623,495,568,493,564,424,569,327,573,299,581,284,577,257,580,223",
+                "prenom": "Gwénaëlle",
+                "nom": "Biboud",
+                "fonction": "Trésosière"
+            },
+            {
+                "id": 10,
+                "coordonnees": "650,195,663,179,676,193,677,225,699,234,712,268,697,297,699,336,698,373,694,426,699,491,629,493,629,437,633,383,632,340,637,263,623,241,638,230,649,226",
+                "prenom": "Stéphane",
+                "nom": "Perraz",
+                "fonction": null
+            },
+            {
+                "id": 11,
+                "coordonnees": "699,213,718,200,733,223,733,248,758,297,750,326,771,490,701,478,700,376,708,344,703,308,710,285,712,251,702,226",
+                "prenom": "Florence",
+                "nom": "Michiels",
+                "fonction": null
+            },
+            {
+                "id": 12,
+                "coordonnees": "761,195,777,188,784,198,782,230,804,243,805,291,799,327,797,383,798,446,803,473,758,446,754,381,758,319,765,279,755,257,748,239,759,223",
+                "prenom": "Patrick",
+                "nom": "Charles",
+                "fonction": null
+            },
+            {
+                "id": 13,
+                "coordonnees": "816,204,834,196,840,206,837,235,858,248,853,295,853,328,844,424,855,464,806,459,803,416,800,383,802,315,812,288,809,239",
+                "prenom": "Ronan",
+                "nom": "Le Velly",
+                "fonction": null
+            },
+            {
+                "id": 14,
+                "coordonnees": "861,201,867,186,888,196,882,222,907,235,914,284,896,302,900,344,894,433,895,453,851,446,857,301",
+                "prenom": "Henry",
+                "nom": "Foulon",
+                "fonction": null
+            },
+            {
+                "id": 15,
+                "coordonnees": "865,270,861,240,847,230,862,222",
+                "prenom": "Jean-Christophe",
+                "nom": "Ménard",
+                "fonction": "Président Honorifique"
+            }
+        ]
+    JSON;
+
+    const INFORMATIONS = <<<JSON
+        [
+            {
+                "categorie": "Séniors",
+                "niveau": "départemental",
+                "type": "feminine"
+            },
+            {
+                "categorie": "M15",
+                "niveau": "départemental",
+                "type": "feminine"
+            },
+            {
+                "categorie": "M13",
+                "niveau": "départemental",
+                "type": "feminine"
+            },
+            {
+                "categorie": "M11",
+                "niveau": "départemental",
+                "type": "feminine"
+            },
+            {
+                "categorie": "Séniors",
+                "niveau": "départemental",
+                "type": "masculine"
+            },
+            {
+                "categorie": "M18",
+                "niveau": "régional et départemental",
+                "type": "masculine"
+            },
+            {
+                "categorie": "M15",
+                "niveau": "départemental",
+                "type": "masculine"
+            },
+            {
+                "categorie": "M13",
+                "niveau": "régional et départemental",
+                "type": "masculine"
+            },
+            {
+                "categorie": "M11",
+                "niveau": "départemental",
+                "type": "masculine"
+            },
+            {
+                "categorie": "M9",
+                "niveau": "départemental",
+                "type": "mixte"
+            },
+            {
+                "categorie": "Mini-hand",
+                "niveau": null,
+                "type": "mixte"
+            },
+            {
+                "categorie": "Baby-Hand",
+                "niveau": null,
+                "type": "mixte"
+            },
+            {
+                "categorie": "Loisir (UFOLEP)",
+                "niveau": null,
+                "type": "mixte"
+            }
+        ]
+    JSON;
+
+    const SALARIES = <<<JSON
+        [
+            {
+                "id" : 1,
+                "nom" : "Grambin",
+                "prenom" : "Micael",
+                "image" : "images/salaries/mic.jpg",
+                "fonction" : "Salarié du club"
+            },
+            {
+                "id" : 2,
+                "nom" : "Brasseur",
+                "prenom" : "Corentin",
+                "image" : "images/salaries/corentin.jpg",
+                "fonction" : "Salarié du club"
+            },
+            {
+                "id" : 3,
+                "nom" : "Neyret",
+                "prenom" : "Cassandra",
+                "image" : "images/salaries/cassy.jpg",
+                "fonction" : "Service civique"
+            }
+        ]
+    JSON;
+
 }
