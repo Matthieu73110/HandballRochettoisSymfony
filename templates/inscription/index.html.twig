@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Handball Rochettois{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ asset('css/inscription.css') }}"> {% endblock %}
+
+{% block body %}
+
+    <h2>Inscription 2023-2024</h2>
+    <h3>Bienvenue au HandBall Rochettois</h3>
+    <p>Vous trouverez dans cette rubrique toutes les informations et les documents afin de créer ou renouveler votre
+        licence au Handball Rochettois pour la saison 2023/2024.</p>
+    <h3>Réductions de licence</h3>
+    <p>Pass'Sport: Le Pass'Sport est reconduit cette année. <a href="https://pass.sports.gouv.fr/" target="_blank">Toutes
+            les infos.</a> Pour bénéficier d'une aide de 50€, il faudra fournir une copie du courrier reçue après la
+        demande.
+
+        Pass Région: Pour les personnes bénéficiant du Pass Région, une aide de 30€ est possible. Il faudra nous fournir
+        le code PIN à 4 chiffres affecté à la carte.
+
+        Carte OKAY Savoie: A partir de la rentrée, le département met en place une carte qui permet une réduction de
+        100€ pour pratiquer des activités sportives, culturelles et artistiques. <a href="https://okay.savoie.fr"
+                                                                                    target="_blank">Plus d'info sur le
+            site</a></p>
+
+    <h3>Tarifs licence et créneaux d'entrainement</h3>
+    <img class="d-block mx-auto" src="{{ asset('images/creneaux.jpg') }}" title="Tarif et créneaux pour la saison 2023-2024" alt="Tarif et créneaux pour la saison 2023-2024">
+
+    <h3>Documents en téléchargement</h3>
+    <p>Vous trouverez ci-dessous tous les documents nécessaires pour être lincencié au club</p>
+    <div class="d-flex justify-content-center align-items-center div-button">
+        <a href="{{ asset('documents/reglement-interieur-hbr-2023-2024.pdf') }}" download class="btn m-1">Règlement Intérieur</a>
+        <a href="{{ asset('documents/2023-2024-fiche-de-renseignement.pdf') }}" download class="btn m-1">Fiche de renseignements</a>
+    </div>
+    
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        changementAcitveLink('Inscription 2023-2024')
+    </script>
+{% endblock %}

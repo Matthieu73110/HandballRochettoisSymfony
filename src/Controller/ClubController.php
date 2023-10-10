@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ClubController extends AbstractController
 {
-    #[Route('/club', name: 'app_club')]
+    #[Route('/{_locale}/club', name: 'app_club', requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function index(ManagerRegistry $doctrine): Response
     {
         $events_club = $doctrine->getRepository(Eventclub::class)->findALl();

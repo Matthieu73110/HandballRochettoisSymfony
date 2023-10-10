@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'app_default')]
+    #[Route('/{_locale}', name: 'app_default', requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function index(ManagerRegistry $doctrine): Response
     {
         $posts = $doctrine->getRepository('App\Entity\PostAcceuil')->findAll();

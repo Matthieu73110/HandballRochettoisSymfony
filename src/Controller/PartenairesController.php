@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PartenairesController extends AbstractController
 {
-    #[Route('/partenaires', name: 'app_partenaires')]
+    #[Route('/{_locale}/partenaires', name: 'app_partenaires', requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function index(ManagerRegistry $doctrine): Response
     {
         $partenaires_institutionnel = $doctrine->getRepository('App\Entity\Partenaires')->findBy(["type" => "institutionnel"], ['nom' => 'ASC']);

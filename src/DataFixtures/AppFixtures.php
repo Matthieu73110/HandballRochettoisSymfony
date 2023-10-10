@@ -6,9 +6,11 @@ use App\Entity\Eventclub;
 use App\Entity\Informationequipe;
 use App\Entity\Membrebureau;
 use App\Entity\Partenaires;
+use App\Entity\Photo;
 use App\Entity\PhotoEquipe;
 use App\Entity\PostAcceuil;
 use App\Entity\Presse;
+use App\Entity\Repphotos;
 use App\Entity\Salarie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -25,6 +27,10 @@ class AppFixtures extends Fixture
         $members_bureau = json_decode(self::MEMBRES_BUREAU);
         $informations = json_decode(self::INFORMATIONS);
         $salaries = json_decode(self::SALARIES);
+        $reps_photos = json_decode(self::DOSSIER_PHOTOS);
+        $photos = json_decode(self::PHOTOS);
+
+        $entites_photos = [];
 
         foreach ($posts_acceuil as $post) {
             $post_acceuil = new PostAcceuil();
@@ -78,7 +84,7 @@ class AppFixtures extends Fixture
             $manager->persist($membre_bureau);
         }
 
-        foreach ($informations as $information){
+        foreach ($informations as $information) {
             $info = new Informationequipe();
             $info->setCategorie($information->categorie);
             $info->setNiveau($information->niveau);
@@ -86,13 +92,29 @@ class AppFixtures extends Fixture
             $manager->persist($info);
         }
 
-        foreach ($salaries as $salarie){
+        foreach ($salaries as $salarie) {
             $sal = new Salarie();
             $sal->setNom($salarie->nom);
             $sal->setPrenom($salarie->prenom);
             $sal->setImage($salarie->image);
             $sal->setFonction($salarie->fonction);
             $manager->persist($sal);
+        }
+
+        foreach ($reps_photos as $rep) {
+            $repphoto = new Repphotos();
+            $repphoto->setNom($rep->nom);
+            $repphoto->setPrioritaire($rep->prioritaire);
+            $repphoto->setDaterep(new \DateTime($rep->date));
+            $manager->persist($repphoto);
+            $entites_photos[$rep->id] = $repphoto;
+        }
+
+        foreach ($photos as $photo) {
+            $ph = new Photo();
+            $ph->setImage($photo->image);
+            $ph->setIdRepphoto($entites_photos[$photo->id_repphoto]);
+            $manager->persist($ph);
         }
 
         $manager->flush();
@@ -940,4 +962,235 @@ class AppFixtures extends Fixture
         ]
     JSON;
 
+    const DOSSIER_PHOTOS = <<<JSON
+        [
+            {
+                "id": 1,
+                "nom": "Team Photos",
+                "prioritaire": true,
+                "date": "2023-09-04"
+            },
+            {
+                "id": 2,
+                "nom": "Club's 30th Anniversary on July 1st, 2023",
+                "date": "2023-07-01",
+                "prioritaire": false
+            },
+            {
+                "id": 3,
+                "nom": "Senior Men's 1 Match on May 6, 2023",
+                "date": "2023-05-06",
+                "prioritaire": false
+            },
+            {
+                "id": 4,
+                "nom": "M13 M1 - M13 F1 - SF - SG 1 Matches on March 17, 2023",
+                "date": "2023-03-17",
+                "prioritaire": false
+            },
+            {
+                "id": 5,
+                "nom": "M13 F1 and M13 G1 Matches on March 4, 2023",
+                "date": "2023-03-04",
+                "prioritaire": false
+            },
+            {
+                "id": 6,
+                "nom": "Senior Men's 1 Match on May 6, 2023",
+                "date": "2023-01-28",
+                "prioritaire": false
+            },
+            {
+                "id": 7,
+                "nom": "Bob is Everywhere!!",
+                "date": "2023-01-15",
+                "prioritaire": false
+            },
+            {
+                "id": 8,
+                "nom": "M13 Female vs. ASSAU on January 14, 2023",
+                "date": "2023-01-14",
+                "prioritaire": false
+            },
+            {
+                "id": 9,
+                "nom": "M11 G Matches against Chambéry on November 12, 2022",
+                "date": "2022-11-12",
+                "prioritaire": false
+            },
+            {
+                "id": 10,
+                "nom": "Senior Cohesion Day on October 29, 2022",
+                "date": "2022-10-29",
+                "prioritaire": false
+            },
+            {
+                "id": 11,
+                "nom": "M18F and G2 Matches on January 15, 2022",
+                "date": "2022-01-15",
+                "prioritaire": false
+            },
+            {
+                "id": 12,
+                "nom": "Senior 1 and 2 Matches on December 4-5, 2021",
+                "date": "2021-12-04",
+                "prioritaire": false
+            }
+        ]
+    JSON;
+
+    const PHOTOS = <<<JSON
+    [
+        {
+            "id": 1,
+            "image": "images/photos-equipes/baby-hand.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 2,
+            "image": "images/photos-equipes/mini-hand.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 3,
+            "image": "images/photos-equipes/m9.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 4,
+            "image": "images/photos-equipes/m11-feminin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 5,
+            "image": "images/photos-equipes/m11-masculin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 6,
+            "image": "images/photos-equipes/m13-feminin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 7,
+            "image": "images/photos-equipes/m13-masculin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 8,
+            "image": "images/photos-equipes/m15-feminin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 9,
+            "image": "images/photos-equipes/m15-masculin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 10,
+            "image": "images/photos-equipes/m18-feminin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 11,
+            "image": "images/photos-equipes/m18-masculin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 12,
+            "image": "images/photos-equipes/seniors-feminin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 13,
+            "image": "images/photos-equipes/seniors-masculin.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 14,
+            "image": "images/photos-equipes/ufolep.jpg",
+            "id_repphoto": "1"
+        },
+        {
+            "id": 15,
+            "image": "images/photos-partage/img-7504.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 16,
+            "image": "images/photos-partage/img-7511.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 17,
+            "image": "images/photos-partage/img-7519.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 18,
+            "image": "images/photos-partage/img-7523.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 19,
+            "image": "images/photos-partage/img-7532.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 20,
+            "image": "images/photos-partage/img-7537.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 21,
+            "image": "images/photos-partage/img-7547.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 22,
+            "image": "images/photos-partage/img-7554.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 23,
+            "image": "images/photos-partage/img-7508.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 24,
+            "image": "images/photos-partage/img-7518.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 25,
+            "image": "images/photos-partage/img-7522.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 26,
+            "image": "images/photos-partage/img-7524.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 27,
+            "image": "images/photos-partage/img-7535.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 28,
+            "image": "images/photos-partage/img-7540.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 29,
+            "image": "images/photos-partage/img-7550.jpg",
+            "id_repphoto": 4
+        },
+        {
+            "id": 30,
+            "image": "images/photos-partage/img-7562.jpg",
+            "id_repphoto": 4
+        }
+    ]
+JSON;
 }

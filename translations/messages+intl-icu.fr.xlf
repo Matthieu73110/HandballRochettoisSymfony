@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="Tk7JcZf" resname="title_h2.accueil">
+        <source>title_h2.accueil</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="Bt7cOXF" resname="title_h2.agenda">
+        <source>title_h2.agenda</source>
+        <target>Agenda du week-end</target>
+      </trans-unit>
+      <trans-unit id="A8fNp5j" resname="title_h2.club">
+        <source>title_h2.club</source>
+        <target>Le club</target>
+      </trans-unit>
+      <trans-unit id="HTm4_NF" resname="title_h2.app_inscription">
+        <source>title_h2.app_inscription</source>
+        <target>Inscription 2023-2024</target>
+      </trans-unit>
+      <trans-unit id="0d_L3fZ" resname="title_h2.equipe">
+        <source>title_h2.equipe</source>
+        <target>Equipes et calendriers</target>
+      </trans-unit>
+      <trans-unit id="MnYequM" resname="title_h2.boutique">
+        <source>title_h2.boutique</source>
+        <target>Boutique</target>
+      </trans-unit>
+      <trans-unit id="Q7yWD36" resname="title_h2.photos">
+        <source>title_h2.photos</source>
+        <target>Photos</target>
+      </trans-unit>
+      <trans-unit id="I8IWcSR" resname="title_h2.presse">
+        <source>title_h2.presse</source>
+        <target>Presse</target>
+      </trans-unit>
+      <trans-unit id="Fqwx55M" resname="title_h2.partenaires">
+        <source>title_h2.partenaires</source>
+        <target>Partenaires</target>
+      </trans-unit>
+      <trans-unit id="Ct2OLAw" resname="equipe.entraineur">
+        <source>equipe.entraineur</source>
+        <target>Entraineurs</target>
+      </trans-unit>
+      <trans-unit id="zgLsdKk" resname="title_h2.calendrier">
+        <source>title_h2.calendrier</source>
+        <target>Calendrier</target>
+      </trans-unit>
+      <trans-unit id="J8ihbpH" resname="title_h2.calendrier_equipe">
+        <source>title_h2.calendrier_equipe</source>
+        <target>Calendrier equipe</target>
+      </trans-unit>
+      <trans-unit id="foktJuG" resname="default.index.title">
+        <source>default.index.title</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="iowjpDZ" resname="default.index.title_h2">
+        <source>default.index.title_h2</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="Ue6Uogs" resname="title.agenda">
+        <source>title.agenda</source>
+        <target>Agenda du week-end</target>
+      </trans-unit>
+      <trans-unit id="yWRFSuH" resname="slogan">
+        <source>slogan</source>
+        <target>Convivialité, Respect, Ambition</target>
+      </trans-unit>
+      <trans-unit id="M3q1vyP" resname="club.titre_h2">
+        <source>club.titre_h2</source>
+        <target>Le club</target>
+      </trans-unit>
+      <trans-unit id="qsb3dQj" resname="precedent">
+        <source>precedent</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="55qliye" resname="suivant">
+        <source>suivant</source>
+        <target>Suivant</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

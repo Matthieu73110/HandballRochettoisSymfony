@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Photos - Handball Rochettois{% endblock %}
+
+{% block body %}
+
+    <h2>Photos</h2>
+    {% for repphoto_prioritaire in repphotos_prioritaire %}
+        <div class="card text-bg-dark" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_prioritaire.id}) }}'">
+            <img src="{{ asset('images/logo.png') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{ repphoto_prioritaire.nom }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for repphoto_non_prioritaire in repphotos_non_prioritaire %}
+         <div class="card text-bg-dark" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_non_prioritaire.id}) }}'">
+            <img src="{{ asset('images/logo.png') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <h5 class="card-title">{{repphoto_non_prioritaire.nom}}</h5>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block js %}
+    <script>changementAcitveLink('Photos')</script>
+{% endblock %}

@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home - Handball Rochettois{% endblock %}
+{% block title %}{% trans %}default.index.title{% endtrans %}{% endblock %}
 
 {% block css %}
-	<link rel="stylesheet" href="{{ asset('css/site/accueil.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
 {% endblock %}
 
 {% block body %}
 
-	<h2>Accueil</h2>
+	<h2>{% trans %}default.index.title_h2{% endtrans %}</h2>
 
 	<div id="carouselExampleAutoplaying" class="carousel slide carousel-fade text-center" data-bs-ride="carousel">
 		<div class="carousel-inner w-100">
@@ -26,9 +26,9 @@
 		</div>
 	</div>
 	<hr>
-	<div class="d-flex flex-wrap w-50">
+	<div class="d-flex">
 		{% for post in posts %}
-			<div class="card m-3">
+			<div class="card m-3 infos_accueil">
 				<div class="card-body">
 					{% if post.titre != null %}
 							<h5 class="card-title fw-bold">{{ post.titre }}</h5>

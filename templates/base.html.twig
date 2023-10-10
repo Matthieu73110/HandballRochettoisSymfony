@@ -8,13 +8,13 @@
         <meta name="author" content="Matthieu Fanget">
         <link rel="icon" href="{{ asset('images/logo.ico') }}">
         <title>
-            {% block title %}Handball Rochettois{%  endblock %}
+            {% block title %}{%  endblock %} - Handball Rochettois
         </title>
         <!-- CSS : Bootstrap, Fontawsome, projet (styles communs à tout le projet) -->
         <link href="{{ asset('css/bootstrap-5/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/fontawsome-5.all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/site/base.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/site/footer.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/base.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
         <!-- debut du block css -->
         {% block css %}{%  endblock %}
         <!-- fin du block css -->
@@ -27,7 +27,7 @@
                 <a href="{{ path('app_default')}}"><img src="{{ asset('images/logo.png')}}" alt="Logo du club" title="Logo du club"></a>
                 <div class="flex_title">
                     <h1>handball rochettois</h1>
-                    <p>convivialite, respect, ambition</p>
+                    <p>{% trans %}slogan{% endtrans %}</p>
                 </div>
                 </div>
             </div>

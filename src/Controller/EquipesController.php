@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EquipesController extends AbstractController
 {
-    #[Route('/equipes', name: 'app_equipes')]
+    #[Route('/{_locale}/equipes', name: 'app_equipes', requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function index(ManagerRegistry $doctrine): Response
     {
         $equipes = $doctrine->getRepository('App\Entity\PhotoEquipe')->findAll();
@@ -28,7 +28,7 @@ class EquipesController extends AbstractController
         ]);
     }
 
-    #[Route('/equipes/{idEquipe}', name: 'app_equipes_detail')]
+    #[Route('/{_locale}/equipes/{idEquipe}', name: 'app_equipes_detail' , requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function equipe(ManagerRegistry $doctrine, int $idEquipe = 0): Response
     {
         $equipe = $doctrine->getManager()->getRepository('App\Entity\PhotoEquipe')->findBy(['id'=>$idEquipe]);

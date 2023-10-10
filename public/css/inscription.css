@@ -1,0 +1,11 @@
+.div-button a{
+    background-color: var(--yellow);
+    color: var(--purple);
+    transition: 0.5s;
+}
+
+.div-button a:hover{
+    background-color: var(--purple);
+    color: var(--yellow);
+    transition: 0.5s;
+}

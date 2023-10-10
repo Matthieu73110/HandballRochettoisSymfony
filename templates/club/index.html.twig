@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Le Club - Handball Rochettois
-{% endblock %}
+{% block title %}{% trans %}title_h2.club{% endtrans %}{% endblock %}
 
 {% block css %}
-	<link rel="stylesheet" href="{{ asset('css/site/club.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/club.css') }}">
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<h2>Historique du club</h2>
+	<div class="container position-relative">
+		<h2>{% trans %}club.titre_h2{% endtrans %}</h2>
 		<div class="historique_club">
 			<div id="monCarrousel" class="carousel slide carousel-fade" data-ride="carousel">
 				<div class="carousel-inner">
@@ -22,7 +21,7 @@
 						<div class="carousel-item {{ active_class }}">
 							<div class="dates-wrapper">
 								{% for event in events_club|slice(i * items_per_slide, (i + 1) * items_per_slide) %}
-									<div class="dates">
+									<div class="dates p-1">
 										<h3>{{ event.annee }}</h3>
 										<p>{{ event.titre }}</p>
 									</div>
@@ -31,13 +30,13 @@
 						</div>
 					{% endfor %}
 				</div>
-				<button class="carousel-control-prev" href="#monCarrousel" role="button" data-slide="prev">
+				<button class="carousel-control-prev position-absolute start-0 translate-middle" href="#monCarrousel" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Précédent</span>
+					<span class="sr-only">{% trans %}precedent{% endtrans %}</span>
 				</button>
-				<button class="carousel-control-next" href="#monCarrousel" role="button" data-slide="next">
+				<button class="carousel-control-next position-absolute end-0 translate-middle-y" href="#monCarrousel" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Suivant</span>
+					<span class="sr-only">{% trans %}suivant{% endtrans %}</span>
 				</button>
 			</div>
 		</div>
@@ -150,4 +149,11 @@ activeItem.removeClass('active');
 prevItem.addClass('active');
 });
 	</script>
+{% endblock %}
+
+
+{% block js %}
+	
+	<script>changementAcitveLink('Le club')</script>
+
 {% endblock %}
