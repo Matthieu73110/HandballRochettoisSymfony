@@ -21,7 +21,7 @@
 						<div class="carousel-item {{ active_class }}">
 							<div class="dates-wrapper">
 								{% for event in events_club|slice(i * items_per_slide, (i + 1) * items_per_slide) %}
-									<div class="dates p-1">
+									<div class="dates">
 										<h3>{{ event.annee }}</h3>
 										<p>{{ event.titre }}</p>
 									</div>
@@ -34,7 +34,7 @@
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">{% trans %}precedent{% endtrans %}</span>
 				</button>
-				<button class="carousel-control-next position-absolute end-0 translate-middle-y" href="#monCarrousel" role="button" data-slide="next">
+				<button class="carousel-control-next position-absolute end-0" href="#monCarrousel" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">{% trans %}suivant{% endtrans %}</span>
 				</button>

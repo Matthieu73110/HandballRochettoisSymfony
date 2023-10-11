@@ -23,7 +23,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_club') }}">{% trans %}title_h2.club{% endtrans %}</a>
 					</li>
-                    <li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_inscription') }}">{% trans %}title_h2.app_inscription{% endtrans %}</a>
 					</li>
 					<li class="nav-item">
@@ -42,6 +42,26 @@
 						<a class="nav-link" href="{{ path('app_partenaires') }}">{% trans %}title_h2.partenaires{% endtrans %}</a>
 					</li>
 				</ul>
+				{# {% set route = app.request.attributes.get('route', 'app_default') %}
+				{% set locale = 'default_locale' | trans %}
+				{% set supported_locales = parameter('app.supported_locales') | split('|') %}
+				<ul class="navbar-nav my-0">
+					<li class="nav-item dropdown">
+						<span class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="{{ asset('images/locale/'~locale~'.png') }}" alt="{{locale}}">
+						</span>
+						{% for uneLocale in supported_locales %}
+							{% if uneLocale != locale %}
+								{% set params = params | merge({'_locale': uneLocale }) %}
+								<div class="dropdown-menu" aria-labelledby="dropdown03" style="min-width: 5rem;">
+									<a class="dropdown-item" href="{{ path(route, params) }}">
+										<img src="{{ asset('images/locale/'~uneLocale~'.png') }}" alt="{{uneLocale}}">
+									</a>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</li>
+				</ul> #}
 			</div>
 		</div>
 	</div>

@@ -963,81 +963,82 @@ class AppFixtures extends Fixture
     JSON;
 
     const DOSSIER_PHOTOS = <<<JSON
-        [
-            {
-                "id": 1,
-                "nom": "Team Photos",
-                "prioritaire": true,
-                "date": "2023-09-04"
-            },
-            {
-                "id": 2,
-                "nom": "Club's 30th Anniversary on July 1st, 2023",
-                "date": "2023-07-01",
-                "prioritaire": false
-            },
-            {
-                "id": 3,
-                "nom": "Senior Men's 1 Match on May 6, 2023",
-                "date": "2023-05-06",
-                "prioritaire": false
-            },
-            {
-                "id": 4,
-                "nom": "M13 M1 - M13 F1 - SF - SG 1 Matches on March 17, 2023",
-                "date": "2023-03-17",
-                "prioritaire": false
-            },
-            {
-                "id": 5,
-                "nom": "M13 F1 and M13 G1 Matches on March 4, 2023",
-                "date": "2023-03-04",
-                "prioritaire": false
-            },
-            {
-                "id": 6,
-                "nom": "Senior Men's 1 Match on May 6, 2023",
-                "date": "2023-01-28",
-                "prioritaire": false
-            },
-            {
-                "id": 7,
-                "nom": "Bob is Everywhere!!",
-                "date": "2023-01-15",
-                "prioritaire": false
-            },
-            {
-                "id": 8,
-                "nom": "M13 Female vs. ASSAU on January 14, 2023",
-                "date": "2023-01-14",
-                "prioritaire": false
-            },
-            {
-                "id": 9,
-                "nom": "M11 G Matches against Chambéry on November 12, 2022",
-                "date": "2022-11-12",
-                "prioritaire": false
-            },
-            {
-                "id": 10,
-                "nom": "Senior Cohesion Day on October 29, 2022",
-                "date": "2022-10-29",
-                "prioritaire": false
-            },
-            {
-                "id": 11,
-                "nom": "M18F and G2 Matches on January 15, 2022",
-                "date": "2022-01-15",
-                "prioritaire": false
-            },
-            {
-                "id": 12,
-                "nom": "Senior 1 and 2 Matches on December 4-5, 2021",
-                "date": "2021-12-04",
-                "prioritaire": false
-            }
-        ]
-    JSON;
+    [
+        {
+            "id": 1,
+            "nom": "Photos d'équipe",
+            "prioritaire": true,
+            "date": "2023-09-04"
+        },
+        {
+            "id": 2,
+            "nom": "30e anniversaire du club le 1er juillet 2023",
+            "date": "2023-07-01",
+            "prioritaire": false
+        },
+        {
+            "id": 3,
+            "nom": "Match senior masculin 1 le 6 mai 2023",
+            "date": "2023-05-06",
+            "prioritaire": false
+        },
+        {
+            "id": 4,
+            "nom": "Matches M13 M1 - M13 F1 - SF - SG 1 le 17 mars 2023",
+            "date": "2023-03-17",
+            "prioritaire": false
+        },
+        {
+            "id": 5,
+            "nom": "Matches M13 F1 et M13 G1 le 4 mars 2023",
+            "date": "2023-03-04",
+            "prioritaire": false
+        },
+        {
+            "id": 6,
+            "nom": "Match senior masculin 1 le 28 janvier 2023",
+            "date": "2023-01-28",
+            "prioritaire": false
+        },
+        {
+            "id": 7,
+            "nom": "Bob est partout !!",
+            "date": "2023-01-15",
+            "prioritaire": false
+        },
+        {
+            "id": 8,
+            "nom": "Match M13 féminin vs. ASSAU le 14 janvier 2023",
+            "date": "2023-01-14",
+            "prioritaire": false
+        },
+        {
+            "id": 9,
+            "nom": "Matches M11 garçons contre Chambéry le 12 novembre 2022",
+            "date": "2022-11-12",
+            "prioritaire": false
+        },
+        {
+            "id": 10,
+            "nom": "Journée de cohésion senior le 29 octobre 2022",
+            "date": "2022-10-29",
+            "prioritaire": false
+        },
+        {
+            "id": 11,
+            "nom": "Matches M18F et G2 le 15 janvier 2022",
+            "date": "2022-01-15",
+            "prioritaire": false
+        },
+        {
+            "id": 12,
+            "nom": "Matches senior 1 et 2 les 4-5 décembre 2021",
+            "date": "2021-12-04",
+            "prioritaire": false
+        }
+    ]
+JSON;
+
 
     const PHOTOS = <<<JSON
     [

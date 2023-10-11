@@ -1,0 +1,17 @@
+h2{
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item.active {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--purple);
+}

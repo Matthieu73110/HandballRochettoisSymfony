@@ -2,26 +2,35 @@
 
 {% block title %}Photos - Handball Rochettois{% endblock %}
 
+{% block css %}<link rel="stylesheet" href="{{ asset('css/photo.css') }}">{% endblock %}
+
 {% block body %}
 
     <h2>Photos</h2>
-    {% for repphoto_prioritaire in repphotos_prioritaire %}
-        <div class="card text-bg-dark" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_prioritaire.id}) }}'">
-            <img src="{{ asset('images/logo.png') }}" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <h5 class="card-title">{{ repphoto_prioritaire.nom }}</h5>
-            </div>
-        </div>
-    {% endfor %}
+    <div class="d-flex flex-wrap align-items-center">
 
-    {% for repphoto_non_prioritaire in repphotos_non_prioritaire %}
-         <div class="card text-bg-dark" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_non_prioritaire.id}) }}'">
-            <img src="{{ asset('images/logo.png') }}" class="card-img" alt="...">
-            <div class="card-img-overlay">
-                <h5 class="card-title">{{repphoto_non_prioritaire.nom}}</h5>
+        {% for repphoto_prioritaire in repphotos_prioritaire %}
+            <div class="card m-3 w-25 align-items-center" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_prioritaire.id}) }}'">
+                {% if repphoto_prioritaire.photos is not empty %}
+                    <img src="{{ asset(repphoto_prioritaire.photos[0].image) }}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ repphoto_prioritaire.nom }}</h5>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+
+        {% for repphoto_non_prioritaire in repphotos_non_prioritaire %}
+             <div class="card m-3 w-25 align-items-center" onclick="window.location.href='{{ path('app_photos_affiche', {'idRepPhotos': repphoto_non_prioritaire.id}) }}'">
+                {% if repphoto_non_prioritaire.photos is not empty %}
+                    <img src="{{ asset(repphoto_non_prioritaire.photos[0].image) }}" class="card-img-top" alt="...">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ repphoto_non_prioritaire.nom }}</h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
 
