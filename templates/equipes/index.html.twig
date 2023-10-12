@@ -16,7 +16,7 @@
                 <h3>{{equipe.nom}}</h3>
                 <p>{{equipe.description}}</p>
                 <p class="entraineurs">{% trans %}equipe.entraineur{% endtrans %} : {{equipe.entraineurs}}</p>
-                <a class="" href="{{ path('app_equipes_detail', {'idEquipe':equipe.id}) }}">En savoir plus ...</a>
+                {# <a class="" href="{{ path('app_equipes_detail', {'idEquipe':equipe.id}) }}">En savoir plus ...</a> #}
                 <div class="calendrier_equipes">
                     {% if equipe.nb_liens == 1 %}
                         <a class="lien_poule btn" target="_blank" href="{{equipe.lien_calendrier_format[0]}}">{% trans %}title_h2.calendrier{% endtrans %}</a>
