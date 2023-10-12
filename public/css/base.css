@@ -3,11 +3,11 @@ header{
 }
 
 .flex{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    padding-top: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 8px;
 }
 
 .navbar-toggler span{
@@ -95,7 +95,7 @@ ul li a{
   font-weight: bold;
 }
 
-#nav{
+#navbar{
   width: 80px;
   margin: 0;
   padding-bottom: 0 !important;
@@ -139,12 +139,13 @@ ul li a{
   --light-grey : #E5E5E5;
   --white : #FFFFFF;
   --dark-gray : #545454;
+  font-family: Jost !important;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 p{
