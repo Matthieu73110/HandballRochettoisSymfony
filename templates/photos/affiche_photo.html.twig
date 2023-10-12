@@ -5,8 +5,12 @@
 {% block css %}<link rel="stylesheet" href="{{ asset('css/affiche_photo.css') }}">{% endblock %}
 
 {% block body %}
-
-    <h2>{{nom_repertoire[0].nom}}</h2>
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_photos') }}">Photos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{nom_repertoire[0].nom}}</li>
+        </ol>
+    </nav>
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
         <div class="carousel-inner w-100">
             {% for photo in photos %}
