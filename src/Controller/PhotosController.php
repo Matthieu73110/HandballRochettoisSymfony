@@ -12,7 +12,7 @@ class PhotosController extends AbstractController
     #[Route('/{_locale}/photos', name: 'app_photos' , requirements:['locale' => '%app.supported_locales%'], defaults: ['_locale' => 'fr'])]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $repphotos_prioritaire = $doctrine->getRepository('App\Entity\Repphotos')->findBy(["prioritaire" => "1"], ['daterep' => 'ASC']);
+        $repphotos_prioritaire = $doctrine->getRepository('App\Entity\Repphotos')->findBy(["prioritaire" => "1"], ['daterep' => 'DESC']);
         for ($i = 0; $i < count($repphotos_prioritaire); $i++) {
             $id_rep = $repphotos_prioritaire[$i]->getId(); 
             $photos = $doctrine->getRepository('App\Entity\Photo')->findBy(["id_repphoto" => $id_rep]);
@@ -20,7 +20,7 @@ class PhotosController extends AbstractController
                 $repphotos_prioritaire[$i]->addPhoto($photos[0]);
             }
         }
-        $repphotos_non_prioritaire = $doctrine->getRepository('App\Entity\Repphotos')->findBy(["prioritaire" => "0"], ['daterep' => 'ASC']);
+        $repphotos_non_prioritaire = $doctrine->getRepository('App\Entity\Repphotos')->findBy(["prioritaire" => "0"], ['daterep' => 'DESC']);
         for ($i = 0; $i < count($repphotos_non_prioritaire); $i++) {
             $id_rep = $repphotos_non_prioritaire[$i]->getId(); 
             $photos = $doctrine->getRepository('App\Entity\Photo')->findBy(["id_repphoto" => $id_rep]);

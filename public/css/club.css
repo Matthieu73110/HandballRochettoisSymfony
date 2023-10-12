@@ -184,8 +184,6 @@ body{
 }
 
 .carousel-control-next {
-  /* right: 10px; */
-  padding-left: 50px;
   width: auto !important;
 }
 

@@ -23,3 +23,22 @@
 .infos_accueil{
     width: 50%;
 }
+
+@media screen and (max-width: 768px) {
+    .flex{
+        flex-direction: column;
+    }
+
+    .flex a{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Styles pour les écrans de 769px à 1024px de largeur */
+}
+
+@media screen and (min-width: 1025px) {
+    /* Styles pour les écrans de 1025px de largeur et plus */
+}
