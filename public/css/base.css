@@ -1,8 +1,8 @@
-header{
+header {
   margin-bottom: 20px;
 }
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -10,19 +10,19 @@ header{
   padding-top: 8px;
 }
 
-.navbar-toggler span{
+.navbar-toggler span {
   font-size: 40px;
   font-weight: lighter !important;
 }
 
-.flex img{
+.flex img {
   width: 300px;
   height: 300px;
   margin-right: 20px;
   object-fit: contain;
 }
 
-.flex_title{
+.flex_title {
   text-transform: uppercase;
   font-family: HansHand;
   justify-content: center;
@@ -31,23 +31,23 @@ header{
   align-items: center;
 }
 
-.flex_title p{
+.flex_title p {
   font-family: HansHand;
 }
 
-h1{
+h1 {
   font-weight: normal;
 }
 
-.side-navbar{
+.side-navbar {
   display: none;
 }
 
-.offcanvas-header{
+.offcanvas-header {
   background-color: var(--yellow);
 }
 
-.icons{
+.icons {
   background-color: var(--yellow);
   text-align: center;
   display: flex;
@@ -55,47 +55,47 @@ h1{
   width: 100%;
 }
 
-.icons img{
+.icons img {
   width: 45px;
   height: 45px;
 }
 
-ul{
+ul {
   font-family: Jost;
   list-style: none;
 }
 
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-.flex a:hover{
+.flex a:hover {
   text-decoration: none;
   color: black;
 }
 
-ul li a{
+ul li a {
   background-color: var(--white);
 }
 
-.nav-link{
+.nav-link {
   color: var(--black) !important;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: var(--purple) !important;
   font-weight: bold;
 }
 
 
-.active{
+.active {
   color: var(--purple) !important;
   font-weight: bold;
 }
 
-#navbar{
+#navbar {
   width: 80px;
   margin: 0;
   padding-bottom: 0 !important;
@@ -103,7 +103,7 @@ ul li a{
   top: 0;
 }
 
-.navbar{
+.navbar {
   --bs-navbar-toggler-border-color: transparent !important;
 }
 
@@ -132,13 +132,13 @@ ul li a{
   src: url("../font/hanshand.TTF") format("truetype");
 }
 
-:root{
-  --yellow : #FFE99D;
-  --purple : #637CFF;
-  --black :  #000000;
-  --light-grey : #E5E5E5;
-  --white : #FFFFFF;
-  --dark-gray : #545454;
+:root {
+  --yellow: #FFE99D;
+  --purple: #637CFF;
+  --black: #000000;
+  --light-grey: #E5E5E5;
+  --white: #FFFFFF;
+  --dark-gray: #545454;
   font-family: Jost !important;
 }
 
@@ -148,6 +148,38 @@ ul li a{
   box-sizing: border-box;
 }
 
-p{
+p {
   margin-bottom: 0rem !important;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  h2 {
+    display: none;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .flex a {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  h2 {
+    display: none;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .flex a {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 }
