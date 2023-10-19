@@ -26,13 +26,13 @@
 
 @media screen and (max-width: 768px) {
 
-    #div-accueil-post{
+    .div-accueil-post{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    #div-accueil-post div{
+    .div-accueil-post div{
         width: auto;
     }
 
@@ -42,13 +42,13 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    #div-accueil-post{
+    .div-accueil-post{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    #div-accueil-post div{
+    .div-accueil-post div{
         width: auto;
     }
 
