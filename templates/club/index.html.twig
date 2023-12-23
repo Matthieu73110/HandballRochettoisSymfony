@@ -39,8 +39,19 @@
 					<span class="sr-only">{% trans %}suivant{% endtrans %}</span>
 				</button>
 			</div>
+			<div class="d-none">
+				<ul>
+					{% for event in events_club %}
+						<div class="dates">
+							<h3>{{ event.annee }}</h3>
+							<p>{{ event.titre }}</p>
+						</div>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
+	
 	<div class="infos_club">
 		<h2>Qui sommes-nous ?</h2>
 		<p>Nous sommes un club avec 300 licenciés répartis en 12 collectifs compétitifs et 8 non-compétitifs.
@@ -75,16 +86,29 @@
 		</p>
 	</div>
 	<div class="membres_bureau">
-		<h2>
-			<span>Membres du bureau</span>
-			Saison 2022-2023</h2>
-		<img id="images_membres_bureau" usemap="#membres_bureau" src="{{ asset('images/bureau.jpg') }}" alt="Photo des membres du bureau du club">
-		<map name="membres_bureau">
-			{% for membre in membres %}
-				<area shape="poly" coords="{{membre.coordonnees}}" href="#images_membres_bureau" alt="Photo des membres du bureau" title="{{membre.prenom}} {{membre.nom}}{% if membre.fonction %} ({{membre.fonction}}){% endif %}">
-			{% endfor %}
-		</map>
-		<h6>Absents : David Logie, Aurélie Logie, Philippe Chambat</h6>
+		<div class="affiche_div"> 
+			<h2><span>Membres du bureau</span> Saison 2022-2023</h2>
+			<img id="images_membres_bureau" usemap="#membres_bureau" src="{{ asset('images/bureau.jpg') }}" alt="Photo des membres du bureau du club">
+			<map name="membres_bureau">
+				{% for membre in membres %}
+					<area shape="poly" coords="{{membre.coordonnees}}" href="#images_membres_bureau" alt="Photo des membres du bureau" title="{{membre.prenom}} {{membre.nom}}{% if membre.fonction %} ({{membre.fonction}}){% endif %}">
+				{% endfor %}
+			</map>
+			<h6>Absents : David Logie, Aurélie Logie, Philippe Chambat</h6>
+		</div>
+		<div class="d-none">
+			<ul>
+				{% for membre in membres %}
+					<li>{{membre.prenom}} {{membre.nom}}{% if membre.fonction %} ({{membre.fonction}}){% endif %} </li>
+				{% endfor %}
+			</ul>
+			<h6>Absents</h6>
+			<ul>
+				<li>David Logie</li>
+				<li>Aurélie Logie</li>
+				<li>Philippe Chambat</li>
+			</ul>
+		</div>
 	</div>
 
 	<div class="salaries">

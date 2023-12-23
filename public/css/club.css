@@ -165,12 +165,10 @@ body{
   color: var(--purple);
 }
 
-/* Mettez le sélecteur CSS approprié pour cibler le carousel-container */
 .carousel-container {
   position: relative;
 }
 
-/* Mettez le sélecteur CSS approprié pour cibler les flèches du carrousel */
 .carousel-control-prev {
   position: absolute;
   top: 50%;
@@ -178,7 +176,6 @@ body{
   z-index: 1;
 }
 
-/* Ajustez la position des flèches selon vos besoins */
 .carousel-control-prev {
   left: 10px;
 }
@@ -187,7 +184,6 @@ body{
   width: auto !important;
 }
 
-/* Le reste du CSS pour le carousel reste inchangé */
 .carousel-inner {
   display: flex;
   flex-wrap: wrap;
@@ -202,4 +198,90 @@ body{
   display: flex;
   justify-content: space-around;
   flex: 0 0 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .salaries{
+    text-align: center;
+  }
+
+  .container_infos{
+    flex-direction: column;
+  }
+
+  .container_infos .infos_salaries{
+    margin-bottom: 20px;
+    width: auto;
+    opacity: 1;
+  }
+
+  .affiche_div{
+    display: none;
+  }
+
+  .d-none{
+    display: contents !important;
+  }
+
+  #monCarrousel{
+    display: none !important;
+  }
+  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .salaries{
+    text-align: center;
+  }
+
+  .container_infos{
+    flex-direction: column;
+  }
+
+  .container_infos .infos_salaries{
+    margin-bottom: 20px;
+    width: auto;
+    opacity: 1;
+  }
+
+  .affiche_div{
+    display: none;
+  }
+
+  .d-none{
+    display: contents !important;
+  }
+
+  #monCarrousel{
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1160px) {
+  .salaries{
+    text-align: center;
+  }
+
+  .container_infos{
+    flex-direction: column;
+  }
+
+  .container_infos .infos_salaries{
+    margin-bottom: 20px;
+    width: auto;
+    opacity: 1;
+  }
+
+}
+
+@media screen and (min-width: 1160px) and (max-width: 1360px) {
+  .salaries{
+    text-align: center;
+  }
+
+  .infos_salaries{
+    margin: 10px;
+  }
+
 }
