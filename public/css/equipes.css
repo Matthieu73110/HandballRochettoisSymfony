@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Jost";
   src: url("../font/Jost/static/Jost-Regular.ttf") format("truetype");
 }
@@ -16,7 +16,7 @@
 @font-face {
   font-family: "Jost-LightItalic";
   src: url("../font/Jost/static/Jost-LightItalic.ttf") format("truetype");
-}
+} */
 
 .container{
   width: 100%;
@@ -31,20 +31,6 @@
   justify-content: space-around;
   margin-bottom: 30px;
   flex-wrap: wrap;
-}
-
-.equipes img{
-  width: 480px;
-  height: 320px;
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.equipes img:hover{
-  width: 600px;
-  height: 400px;
-  z-index: 999;
-  transition: 0.5s;
 }
 
 .equipes:first-child{
