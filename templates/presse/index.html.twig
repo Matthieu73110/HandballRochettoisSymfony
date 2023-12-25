@@ -14,7 +14,8 @@
         <div class="card-body">
             <h5 class="card-title">{{presse.titre}} - {{presse.date|date('d-m-Y')}}</h5>
         </div>
-    <img src="{{ asset(presse.image) }}" class="card-img-top">
+        <img src="{{ asset(presse.image) }}" class="card-img-top">
+        <a href="{{asset(presse.image) }}" download class="btn">Télécharger l'article</a>
     </div>
 {% endfor %}
 </div>

@@ -15,7 +15,7 @@
                     <img src="{{ asset(repphoto_prioritaire.photos[0].image) }}" class="card-img-top" alt="...">
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ repphoto_prioritaire.nom }}</h5>
+                    <h5 class="card-title w-auto">{{ repphoto_prioritaire.nom }}</h5>
                 </div>
             </div>
         {% endfor %}
@@ -26,7 +26,7 @@
                     <img src="{{ asset(repphoto_non_prioritaire.photos[0].image) }}" class="card-img-top" alt="...">
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ repphoto_non_prioritaire.nom }}</h5>
+                    <h5 class="card-title w-auto">{{ repphoto_non_prioritaire.nom }}</h5>
                 </div>
             </div>
         {% endfor %}
