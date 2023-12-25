@@ -40,7 +40,7 @@ body{
   background-color: var(--yellow);
   position: relative;
   float: right;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   padding-left: 50px;
   margin-bottom: 30px;
 }
@@ -221,7 +221,7 @@ body{
   }
 
   .d-none{
-    display: contents !important;
+    display: inherit !important;
   }
 
   #monCarrousel{
@@ -231,6 +231,11 @@ body{
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  body {
+    overflow-x: hidden !important;
+  }
+
   .salaries{
     text-align: center;
   }
@@ -250,7 +255,7 @@ body{
   }
 
   .d-none{
-    display: contents !important;
+    display: inherit !important;
   }
 
   #monCarrousel{
@@ -259,6 +264,11 @@ body{
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1160px) {
+
+  body {
+    overflow-x: hidden !important;
+  }
+
   .salaries{
     text-align: center;
   }

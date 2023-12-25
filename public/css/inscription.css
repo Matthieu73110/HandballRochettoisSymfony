@@ -13,7 +13,7 @@ p{
 }
 
 .div-button a{
-    background-color: var(--yellow);
+    background-color: var(--yellow) !important;
     color: var(--purple);
     transition: 0.5s;
 }
@@ -23,3 +23,18 @@ p{
     color: var(--yellow);
     transition: 0.5s;
 }
+
+.div-button a:last-child {
+    display: none;
+  }
+
+@media screen and (max-width: 1024px) {
+    .div-button a:last-child {
+      display: inherit !important;
+    }
+
+    .tarifs, .tarifs + img{
+        display: none !important;
+    }
+
+  }
