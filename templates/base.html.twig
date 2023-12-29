@@ -50,6 +50,7 @@
         <script src="{{ asset('js/jquery-3/jquery.slim.min.js') }}" ></script>
         <script src="{{ asset('js/bootstrap-5/bootstrap.bundle.min.js') }}" ></script>
         <script src="{{ asset('js/bootstrap-5/bootstrap.bundle.min.js') }}" ></script>
+        <script src="https://kit.fontawesome.com/1ee5ffc8e6.js" crossorigin="anonymous"></script>
         <script>
             function changementAcitveLink(nomLink) {
                 var navLink = document.getElementsByClassName('navbar-nav')
@@ -71,6 +72,12 @@
                     case 'mail':
                         element.src = "{{ asset('images/reseaux-sociaux/email-blue.png') }}" ;
                         break;
+                    case 'pen':
+                        element.src = "{{ asset('images/icons/pen-blue.png') }}" ;
+                        break;
+                    case 'poubelle':
+                        element.src = "{{ asset('images/icons/poubelle-blue.png') }}" ;
+                        break;
                 }
             }
 
@@ -84,6 +91,12 @@
                     break;
                     case 'mail':
                         element.src = "{{ asset('images/reseaux-sociaux/email.png') }}" ;
+                        break;
+                    case 'pen':
+                        element.src = "{{ asset('images/icons/pen.png') }}" ;
+                        break;
+                    case 'poubelle':
+                        element.src = "{{ asset('images/icons/poubelle.png') }}" ;
                         break;
                 }
             }        

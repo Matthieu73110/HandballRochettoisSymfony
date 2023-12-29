@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BackOffice{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ asset('css/backoffice/backoffice.css') }}"> {% endblock %}
+
+{% block body %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nom</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        {# <a class="m-1"><img id="poubelle" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" src="{{ asset('images/icons/poubelle.png') }}"> </a> #}
+        <tbody>
+            {% set i = 1 %}
+            {% for table in tables %}
+                <tr scope="row" class="fw-light">
+                    {% if table["Tables_in_handballrochettois"] == "eventclub" %}
+                        <th>{{i}}</th>
+                        <th>Événements du club </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "informationequipe" %}
+                        <th>{{i}}</th>
+                        <th>Informations sur les équipes </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "membrebureau" %}
+                        <th>{{i}}</th>
+                        <th>Membres du bureau </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "partenaires" %}
+                        <th>{{i}}</th>
+                        <th>Partenaires </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "photo" %}
+                        <th>{{i}}</th>
+                        <th>Photos </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "photo_equipe" %}
+                        <th>{{i}}</th>
+                        <th>Photos d'équipe </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "post_acceuil" %}
+                        <th>{{i}}</th>
+                        <th>Articles d'accueil </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "presse" %}
+                        <th>{{i}}</th>
+                        <th>Article de Presses </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "repphotos" %}
+                        <th>{{i}}</th>
+                        <th>Nom des Dossiers pour les photos </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "salarie" %}
+                        <th>{{i}}</th>
+                        <th>Salariés </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {% elseif table["Tables_in_handballrochettois"] == "user" %}
+                        <th>{{i}}</th>
+                        <th>Utilisateurs </th>
+                        <th><div class="btn-group"><a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> </div></th>
+                    {# {% else %}
+                        <th>{{ table["Tables_in_handballrochettois"] }}</th> #}
+                    {% endif %}
+                </tr>
+                {% set i = i + 1 %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

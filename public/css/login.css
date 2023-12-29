@@ -1,0 +1,12 @@
+.signin{
+    background-color: var(--yellow);
+    color: var(--purple);
+    border-color: var(--white);
+}
+
+.signin:hover{
+    background-color: var(--purple);
+    color: var(--yellow);
+    transition: 0.5s;
+    border-color: var(--white);   
+}
