@@ -1,0 +1,9 @@
+#nav-backoffice ol li a:hover{
+    transition: 0.5s;
+    color: var(--purple);
+}
+
+table img{
+    width: 30px;
+    height: 30px;
+}
