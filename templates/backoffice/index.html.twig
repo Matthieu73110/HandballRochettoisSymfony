@@ -20,8 +20,9 @@
                 <tr scope="row" class="fw-light">
                     <th>{{i}}</th>
                     <th>{{table.name_table}}</th>
-                    <th><div class="btn-group"> <a href="{{ path('app_backoffice_show', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="oeil" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Visualiser" src="{{ asset('images/icons/oeil.png') }}"></a> <a href="{{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a></div></th>
+                    <th><div class="btn-group"> <a href="{{ path('app_backoffice_show', {'name_table': table["Tables_in_handballrochettois"]}) }}" class="m-1"><img id="oeil" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Visualiser" src="{{ asset('images/icons/oeil.png') }}"></a> <a href="#" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a></div></th>
                 </tr>
+                {# {{ path('app_backoffice_edit', {'name_table': table["Tables_in_handballrochettois"]}) }} #}
                 {% set i = i + 1 %}
             {% endfor %}
         </tbody>
