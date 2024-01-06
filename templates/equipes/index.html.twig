@@ -11,8 +11,8 @@
 <div class="container d-flex">
     {% for equipe in equipes %}
        <div class="equipes">
-            <img class="w-75" src="{{ asset(equipe.image) }}" alt="Photo d'équipes des {{equipe.nom}}>">
-            <div class="equipes_infos w-auto m-3">
+            <img class="m-3" src="{{ asset(equipe.image) }}" alt="Photo d'équipes des {{equipe.nom}}>">
+            <div class="equipes_infos m-3">
                 <h3>{{equipe.nom}}</h3>
                 <p>{{equipe.description}}</p>
                 <p class="entraineurs">{% trans %}equipe.entraineur{% endtrans %} : {{equipe.entraineurs}}</p>
