@@ -1,5 +1,5 @@
 body{
-  font-family: Jost;
+  font-family: 'Jost';
 }
 
 .container{
@@ -17,7 +17,7 @@ body{
 .container h2{
   color: var(--white);
   margin-bottom: 20px;
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
 }
 
 .dates{
@@ -28,11 +28,12 @@ body{
 
 .dates h3{
   color: var(--yellow);
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
 }
 
 .dates p{
   color: var(--white);
+  font-family: 'Jost';
 }
 
 .infos_club{
@@ -47,12 +48,16 @@ body{
 
 .infos_club h2{
   margin-top: 20px;
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
+}
+
+.infos_club p{
+  font-family: 'Jost';
 }
 
 .infos_club span{
   color: var(--purple);
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
 }
 
 .membres_bureau{
@@ -62,11 +67,11 @@ body{
 
 .membres_bureau h2 span{
   font-weight: bold;
-  font-family: Jost;
+  font-family: 'Jost';
 }
 
 .membres_bureau h2{
-  font-family: Jost-Light;
+  font-family: 'Jost-Light';
 }
 
 .membres_bureau img{
@@ -76,7 +81,7 @@ body{
 }
 
 .membres_bureau h6{
-  font-family: Jost-Light;
+  font-family: 'Jost-Light';
 }
 
 .salaries{
@@ -87,7 +92,7 @@ body{
 }
 
 .salaries h2{
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
   margin-bottom: 20px;
 }
 
@@ -116,7 +121,7 @@ body{
 .prenom_salaries{
   line-height: 0px;
   display: flex;
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
   flex-direction: column;
   align-items: center;
   background-color: var(--yellow);
@@ -129,6 +134,7 @@ body{
   color: var(--purple);
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+  font-family: 'Jost-SemiBold';
 }
 
 .prenom_salaries p span{
@@ -141,7 +147,7 @@ body{
 }
 
 .contact h2{
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
 }
 
 .contact p img{
@@ -151,13 +157,13 @@ body{
 }
 
 .contact p:nth-child(3){
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
   display: flex;
   align-items: center;
 }
 
 .contact span{
-  font-family: Jost-SemiBold;
+  font-family: 'Jost-SemiBold';
 }
 
 

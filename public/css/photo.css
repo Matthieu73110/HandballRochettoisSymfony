@@ -1,3 +1,7 @@
 .card:hover{
   cursor: pointer;
 }
+
+h5{
+  font-family: 'Jost-SemiBold';
+}

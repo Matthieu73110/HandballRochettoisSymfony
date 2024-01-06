@@ -19,7 +19,7 @@ p{
 }
 
 .div-button a:hover{
-    background-color: var(--purple);
+    background-color: var(--purple) !important;
     color: var(--yellow);
     transition: 0.5s;
 }
