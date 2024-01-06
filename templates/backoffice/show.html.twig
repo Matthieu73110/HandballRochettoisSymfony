@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BackOffice{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ asset('css/backoffice/show.css') }}"> {% endblock %}
+
+{% block body %}
+    <nav id="nav-backoffice" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_backoffice') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{name_table_normalizate}}</li>
+        </ol>
+    </nav>  
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                {% for column, _ in tableContent[0] %}
+                    <th scope="col">{{ column }}</th>
+                {% endfor %}
+                    <th scope="col"></th>
+            </tr>
+        </thead>
+        {# <a class="m-1"><img id="poubelle" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" src="{{ asset('images/icons/poubelle.png') }}"> </a> #}
+        <tbody>
+           {% for row in tableContent %}
+                <tr scope="row">
+                    {% for _, value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                    <td><div class="btn-group"> <a href="#" class="m-1"><img id="pen" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" title="Editer" src="{{ asset('images/icons/pen.png') }}"></a> <a class="m-1"><img id="poubelle" onmouseover="changePictureHover(this)" onmouseout="changePictureUnHover(this)" src="{{ asset('images/icons/poubelle.png') }}"> </a> </div></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
