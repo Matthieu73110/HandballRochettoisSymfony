@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page 404{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ asset('css/404.css') }}"> {% endblock %}
+
+{% block body %}
+
+<div class="d-flex text-center justify-content-center align-items-center">
+    <img src="{{ asset('images/404/404.png') }}">
+    <div class="text-center d-flex flex-column justify-content-center align-items-center">
+        <h2>Vous venez de prendre 2' !</h1>
+        <p>Cette page est inaccessible. Si elle l'était auparavant, <a href="mailto:5173025@ffhandball.net"><span>veuillez contacter notre administrateur.</span></a></p>
+    </div>
+</div>
+
+{# <h1 class="text-danger">Page Non Trouvée</h1> #}
+
+{% endblock %}

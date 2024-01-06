@@ -19,4 +19,9 @@ class DefaultController extends AbstractController
             'equipes' => $equipes
         ]);
     }
+
+    public function error404(): Response
+    {
+        return $this->render('404.html.twig', [], new Response('', 404));
+    }
 }

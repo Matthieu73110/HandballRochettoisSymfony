@@ -1,0 +1,23 @@
+h2{
+    font-size: 40px;
+}
+
+h2,p{
+    font-family: 'Jost';
+}
+
+a span{
+    color: var(--purple);
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+a span:hover{
+    color: var(--yellow);
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+p{
+    font-size: 20px;
+}

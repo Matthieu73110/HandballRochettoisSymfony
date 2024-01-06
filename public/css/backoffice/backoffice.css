@@ -2,3 +2,7 @@ table img{
     width: 30px;
     height: 30px;
 }
+
+table thead tr th{
+    color: var(--purple) !important;
+}
